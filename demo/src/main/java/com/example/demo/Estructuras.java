@@ -29,6 +29,11 @@ public class Estructuras {
         infoList.add("3L");
     }
 
+    public List<String> addToList(String info){
+        infoList.add(info);
+        return infoList;
+    }
+
     public void createQueue(){
         infoQueue.clear();
         infoQueue.add("1Q");

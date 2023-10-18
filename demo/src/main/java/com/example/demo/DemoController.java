@@ -9,8 +9,16 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/semana5")
 
 public class DemoController {
-    @GetMapping
-    public String Semana5(){
-        return "La semana 5 fue muy productiva";
+    @GetMapping("/info")
+    public String Semana5Get(){
+        Estructuras misEstructuras = new Estructuras();
+        misEstructuras.createList();
+        return misEstructuras.getInfoList().toString();
+    }
+    @PostMapping("/info")
+    public String Semana5Post(String info){
+        Estructuras misEstructuras = new Estructuras();
+        misEstructuras.createList();
+        return misEstructuras.addToList(info).toString();
     }
 }
